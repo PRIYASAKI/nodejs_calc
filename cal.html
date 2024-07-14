@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background-color: rgba(26, 86, 105, 0.8);
+        }
+
+        .calculator {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 80%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="number"], select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #1d8c1f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        button:hover {
+            background-color: #146627;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <form action="/calculate" method="post">
+            <label for="num1">Number 1:</label><br>
+            <input type="number" id="num1" name="num1" required><br>
+            <label for="num2">Number 2:</label><br>
+            <input type="number" id="num2" name="num2" required><br>
+            <label for="operation">Operation:</label><br>
+            <select name="operation">
+                <option value="add">Addition</option>
+                <option value="subtract">Subtraction</option>
+                <option value="multiply">Multiplication</option>
+                <option value="divide">Division</option>
+                <option value="modulo">Modulo</option>
+                <option value="power">Power</option>
+            </select><br>
+            <button type="submit">Calculate</button>
+        </form>
+        <div class="result"></div>
+    </div>
+</body>
+</html>
